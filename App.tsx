@@ -1,118 +1,100 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import Views from './src/components/Views';
+import FlexProp from './src/components/FlexProp';
+import CommonButton from './src/components/CommonButton';
+import Hooks from './src/components/Hooks';
+import HooksPart2 from './src/components/HooksPart2';
+import HooksPart3 from './src/components/HooksPart3';
+import HooksPart4 from './src/components/HooksPart4';
+import WelcomeIntro from './src/components/WelcomeIntro';
+import FlatListDemo2 from './src/components/FlatListDemo2';
+import TextFlatListDemo3 from './src/components/TextFlatListDemo3';
+import InputsEvents from './src/components/InputsEvents';
+import OTPDemo from './src/components/OTPDemo';
+import Buttons from './src/components/Buttons';
+import Modals from './src/components/Modals';
+import Responsiveness from './src/components/Responsiveness';
+import Animation1 from './src/animations/Animation1';
+import Animation2 from './src/animations/Animation2';
+import OnlineOflineCheck from './src/components/OnlineOflineCheck';
+import Notify from './src/components/nootifeeNotification/Notify';
+import CustomDropDown from './src/components/CustomDropDown';
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
-
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+const App = () => {
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
+    <>
+      {/* react native view */}
+      {/* <Views/> */}
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+
+      {/* flex properties */}
+      {/* <FlexProp /> */}
+
+
+      {/* customizable button with events */}
+      {/* <CommonButton
+        PressBtn={() => console.log('hello')}
+        title={'first btn'}
+        bg={'blue'}
+        h={40}
+        w={100}
+        br={''}
+        color={'white'}
+      /> */}
+
+      {/* Hooks part 1 useEffect() */}
+      {/* <Hooks/> */}
+
+      {/* Hooks part 2 useRef() */}
+      {/* <HooksPart2/> */}
+
+      {/* Hooks part 3 useReducer() */}
+      {/* <HooksPart3/> */}
+
+      {/* Hooks part 4 useCallback() */}
+      {/* <HooksPart4/> */}
+
+      {/* welcome intro FlateList part 1  */}
+      {/* <WelcomeIntro/> */}
+
+      {/* FlateList part 2  */}
+      {/* <FlatListDemo2/> */}
+
+      {/* text horixontal flex wrap use part 3  */}
+      {/* <TextFlatListDemo3/> */}
+
+      {/* text inputs and events  */}
+      {/* <InputsEvents/> */}
+
+      {/* OTP DEMO   */}
+      {/* <OTPDemo/> */}
+      
+      {/* Buttons Rect native   */}
+      {/* <Buttons/> */}
+
+      {/* Modals react native   */}
+      {/* <Modals/> */}
+
+      {/* Responsivness react native   */}
+      {/* <Responsiveness/> */}
+
+      {/* <Animation1/> */}
+      {/* <Animation2/> */}
+      {/* <OnlineOflineCheck/> */}
+      {/* <Notify/> */}
+      <CustomDropDown/>
+
+
+    </>
+  );
+};
 
 export default App;
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+// });
