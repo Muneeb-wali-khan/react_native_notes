@@ -20,16 +20,13 @@ import Notify from './src/components/nootifeeNotification/Notify';
 import CustomDropDown from './src/components/CustomDropDown';
 
 const App = () => {
-
   return (
     <>
       {/* react native view */}
       {/* <Views/> */}
 
-
       {/* flex properties */}
       {/* <FlexProp /> */}
-
 
       {/* customizable button with events */}
       {/* <CommonButton
@@ -68,7 +65,7 @@ const App = () => {
 
       {/* OTP DEMO   */}
       {/* <OTPDemo/> */}
-      
+
       {/* Buttons Rect native   */}
       {/* <Buttons/> */}
 
@@ -84,9 +81,7 @@ const App = () => {
       {/* <Notify/> */}
       {/* <CustomDropDown/> */}
 
-    <Views>
-      <Text>Hello</Text>
-    </Views>
+      <Views/>
     </>
   );
 };
