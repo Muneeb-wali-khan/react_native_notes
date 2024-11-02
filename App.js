@@ -82,9 +82,11 @@ const App = () => {
       {/* <Animation2/> */}
       {/* <OnlineOflineCheck/> */}
       {/* <Notify/> */}
-      <CustomDropDown/>
+      {/* <CustomDropDown/> */}
 
-
+    <Views>
+      <Text>Hello</Text>
+    </Views>
     </>
   );
 };
