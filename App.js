@@ -70,7 +70,7 @@ const App = () => {
       {/* <Buttons/> */}
 
       {/* Modals react native   */}
-      {/* <Modals/> */}
+      <Modals/>
 
       {/* Responsivness react native   */}
       {/* <Responsiveness/> */}
@@ -80,8 +80,7 @@ const App = () => {
       {/* <OnlineOflineCheck/> */}
       {/* <Notify/> */}
       {/* <CustomDropDown/> */}
-
-      <Views/>
+      {/* <Views/> */}
     </>
   );
 };
