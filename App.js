@@ -23,7 +23,7 @@ const App = () => {
   return (
     <>
       {/* react native view */}
-      {/* <Views/> */}
+      <Views/>
 
       {/* flex properties */}
       {/* <FlexProp /> */}
@@ -70,7 +70,7 @@ const App = () => {
       {/* <Buttons/> */}
 
       {/* Modals react native   */}
-      <Modals/>
+      {/* <Modals/> */}
 
       {/* Responsivness react native   */}
       {/* <Responsiveness/> */}
