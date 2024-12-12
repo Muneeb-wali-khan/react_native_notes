@@ -18,12 +18,14 @@ import Animation2 from './src/animations/Animation2';
 import OnlineOflineCheck from './src/components/OnlineOflineCheck';
 import Notify from './src/components/nootifeeNotification/Notify';
 import CustomDropDown from './src/components/CustomDropDown';
+// import Weather from './src/components/weather/Weather';
+import ReactNativeCharts from './src/components/ReactNativeCharts';
 
 const App = () => {
   return (
     <>
       {/* react native view */}
-      <Views/>
+      {/* <Views/> */}
 
       {/* flex properties */}
       {/* <FlexProp /> */}
@@ -81,6 +83,8 @@ const App = () => {
       {/* <Notify/> */}
       {/* <CustomDropDown/> */}
       {/* <Views/> */}
+      {/* <Weather/> */}
+      <ReactNativeCharts/>
     </>
   );
 };
