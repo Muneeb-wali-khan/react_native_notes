@@ -20,6 +20,7 @@ import Notify from './src/components/nootifeeNotification/Notify';
 import CustomDropDown from './src/components/CustomDropDown';
 // import Weather from './src/components/weather/Weather';
 import ReactNativeCharts from './src/components/ReactNativeCharts';
+import ReAnimated from './src/animations/ReAnimated';
 
 const App = () => {
   return (
@@ -85,6 +86,7 @@ const App = () => {
       {/* <Views/> */}
       {/* <Weather/> */}
       {/* <ReactNativeCharts/> */}
+      <ReAnimated/>
     </>
   );
 };
