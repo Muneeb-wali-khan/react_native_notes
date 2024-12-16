@@ -84,7 +84,7 @@ const App = () => {
       {/* <CustomDropDown/> */}
       {/* <Views/> */}
       {/* <Weather/> */}
-      <ReactNativeCharts/>
+      {/* <ReactNativeCharts/> */}
     </>
   );
 };

@@ -1,7 +1,55 @@
+import {View, Text, Dimensions, ScrollView} from 'react-native';
 import React from 'react';
-import { View, Text, Dimensions, StyleSheet } from 'react-native';
-import { PieChart } from 'react-native-chart-kit';
-import Svg, { Text as SvgText } from 'react-native-svg';
+import {PieChart} from 'react-native-chart-kit';
+import Svg, {Text as SvgText} from 'react-native-svg';
+const Half_gray  = 'rgba(0,0,0,0.6)'
+import {
+  responsiveWidth,
+  responsiveHeight,
+  responsiveFontSize,
+} from 'react-native-responsive-dimensions';
+
+const calculateAttendances = data => {
+  const todayMonth = new Date();
+  const getLastDigitMonth = new Date(
+    todayMonth.getFullYear(),
+    todayMonth.getMonth() + 1,
+    0,
+  ).getDate();
+  const monthNames = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
+  const currentMonth = monthNames[todayMonth.getMonth()];
+
+  const totalDays = getLastDigitMonth;
+  if (totalDays === 0) return {presentPercentage: 0, absentPercentage: 0};
+  const presentCount = data?.filter(
+    record => record?.status === 'present',
+  ).length;
+  const absentCount = data?.filter(
+    record => record?.status === 'absent',
+  ).length;
+
+  return {
+    presentPercentage: ((presentCount / totalDays) * 100).toFixed(0),
+    absentPercentage: ((absentCount / totalDays) * 100).toFixed(0),
+    presentCount,
+    absentCount,
+    totalDays,
+    currentMonth,
+  };
+};
 
 const attendanceData = [
   { _id: '1', date: '2024-11-01T08:00:00Z', status: 'present' },
@@ -16,179 +64,219 @@ const attendanceData = [
   { _id: '10', date: '2024-11-10T08:00:00Z', status: 'absent' },
 ];
 
-const calculateAttendancePercentages = (data) => {
-  const totalDays = data.length;
-  if (totalDays === 0) return { presentPercentage: 0, absentPercentage: 0 };
 
-  const presentCount = data.filter(record => record.status === 'present').length;
-  const absentCount = totalDays - presentCount;
-
-  return {
-    presentPercentage: ((presentCount / totalDays) * 100).toFixed(2),
-    absentPercentage: ((absentCount / totalDays) * 100).toFixed(2),
-    presentCount,
-    absentCount,
-    totalDays
-  };
-};
 
 const ReactNativeCharts = () => {
-  const { presentPercentage, absentPercentage, presentCount, absentCount, totalDays } = calculateAttendancePercentages(attendanceData);
+  // const {data: attendanceData, isLoading: attendanceLoading} =
+  //   useStudentAttendanceQuery();
+  const {
+    presentPercentage,
+    absentPercentage,
+    presentCount,
+    absentCount,
+    totalDays,
+    currentMonth,
+  } = calculateAttendances(attendanceData || []);
+  console.log(absentCount);
+
+  // if (attendanceLoading) {
+  //   return <Loader />;
+  // }
 
   const pieChartData = [
     {
-      name: `Present (${presentPercentage}%)`,
-      population: Number(presentPercentage),
-      color: '#28a745', // Green for Present
+      name: `Present`,
+      population: Number(presentCount),
+      color: '#0B8917',
       legendFontColor: '#333',
-      legendFontSize: 15,
+      legendFontSize: responsiveFontSize(1.2),
     },
     {
-      name: `Absent (${absentPercentage}%)`,
-      population: Number(absentPercentage),
-      color: '#dc3545', // Red for Absent
+      name: `Absent`,
+      population: Number(absentCount),
+      color: '#C81D02',
       legendFontColor: '#333',
-      legendFontSize: 15,
+      legendFontSize: responsiveFontSize(1.2),
     },
   ];
-
-  const screenWidth = Dimensions.get('window').width - 50;
+  const screenWidth = responsiveWidth(90);
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Attendance Overview</Text>
-      
-      <View style={styles.chartContainer}>
-        <PieChart
-          data={pieChartData}
-          width={screenWidth}
-          height={220}
-          chartConfig={{
-            backgroundColor: '#ffffff',
-            backgroundGradientFrom: '#ffffff',
-            backgroundGradientTo: '#ffffff',
-            color: () => `rgba(0, 0, 0, 0.5)`,
-            labelColor: () => `rgba(0, 0, 0, 0.7)`,
-          }}
-          accessor="population"
-          backgroundColor="transparent"
-          paddingLeft="15"
-          absolute
-          style={styles.chartStyle}
-        />
-        <Svg height="220" width={screenWidth} style={styles.svgOverlay}>
-          {/* Centered text for Present */}
-          <SvgText
-            x="25%"
-            y="50%"
-            fill="#28a745"
-            fontSize="18"
-            fontWeight="bold"
-            textAnchor="middle"
-          >
-            {presentPercentage}%
-          </SvgText>
-          {/* Centered text for Absent */}
-          <SvgText
-            x="75%"
-            y="50%"
-            fill="#dc3545"
-            fontSize="18"
-            fontWeight="bold"
-            textAnchor="middle"
-          >
-            {absentPercentage}%
-          </SvgText>
-        </Svg>
+    <ScrollView contentContainerStyle={{flex: 1}}>
+      <View
+        style={{
+          alignItems: 'center',
+          marginVertical: responsiveHeight(2),
+          padding: responsiveWidth(5),
+          borderRadius: responsiveWidth(4),
+          backgroundColor: '#f9f9f9',
+          shadowColor: '#000',
+          shadowOffset: {width: 0, height: 0},
+          shadowOpacity: 0.1,
+          shadowRadius: 8,
+          elevation: 5,
+          width: responsiveWidth(90),
+          alignSelf: 'center',
+        }}>
+        <Text
+          style={{
+            fontSize: responsiveFontSize(2),
+            color: Half_gray,
+            fontWeight: 'bold',
+            marginBottom: responsiveHeight(1.5),
+            textAlign: 'center',
+          }}>
+          Attendance {currentMonth}
+        </Text>
+
+        <View style={{marginBottom: responsiveHeight(2)}}>
+          <PieChart
+            data={pieChartData}
+            width={screenWidth}
+            hasLegend={false}
+            height={responsiveHeight(30)}
+            chartConfig={{
+              backgroundColor: 'red',
+              color: () => `rgba(0, 0, 0, 0.5)`,
+              labelColor: () => `rgba(0, 0, 0, 0.7)`,
+            }}
+            accessor="population"
+            backgroundColor="transparent"
+            paddingLeft="15"
+            absolute
+            style={{
+              borderRadius: responsiveWidth(4),
+              alignSelf: 'center',
+              width: responsiveWidth(50),
+            }}
+          />
+          <Svg
+            height={responsiveHeight(30)}
+            width={screenWidth}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+            }}>
+            {/* Centered text for Present */}
+            <SvgText
+              x="40%"
+              y="60%"
+              fill="#ffff"
+              fontSize={responsiveFontSize(1.75)}
+              fontWeight="bold"
+              textAnchor="middle">
+              {presentPercentage}%
+            </SvgText>
+            {/* Centered text for Absent */}
+            <SvgText
+              x="13%"
+              y="40%"
+              fill="#ffff"
+              fontSize={responsiveFontSize(1.75)}
+              fontWeight="bold"
+              textAnchor="middle">
+              {absentPercentage}%
+            </SvgText>
+          </Svg>
+          <View style={{flexDirection: 'column', gap: responsiveHeight(0.5)}}>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                gap: responsiveWidth(1),
+              }}>
+              <View
+                style={{
+                  borderRadius: responsiveWidth(2),
+                  backgroundColor: 'red',
+                  height: responsiveHeight(1),
+                  width: responsiveWidth(1.5),
+                }}
+              />
+              <Text style={{fontSize: responsiveFontSize(0.9)}}>Absent</Text>
+            </View>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                gap: responsiveWidth(1),
+              }}>
+              <View
+                style={{
+                  borderRadius: responsiveWidth(2),
+                  backgroundColor: 'green',
+                  height: responsiveHeight(1),
+                  width: responsiveWidth(1.5),
+                }}
+              />
+              <Text style={{fontSize: responsiveFontSize(0.9)}}>Present</Text>
+            </View>
+          </View>
+        </View>
       </View>
 
-      <View style={styles.summary}>
-        <Text style={styles.summaryTitle}>Summary</Text>
-        <View style={styles.summaryRow}>
-          <Text style={styles.summaryLabel}>Total Days:</Text>
-          <Text style={styles.summaryValue}>{totalDays}</Text>
+      {/* Total days, present count, absent count sections */}
+      {[
+        {
+          label: 'Total Days',
+          count: totalDays,
+          color: Half_gray,
+        },
+        {
+          label: 'Total Present',
+          count: presentCount,
+          color: '#0B8917',
+        },
+        {
+          label: 'Total Absent',
+          count: absentCount,
+          color: '#C81D02',
+        },
+      ].map(({label, count, color}, index) => (
+        <View
+          key={index}
+          style={{
+            alignItems: 'flex-start',
+            justifyContent: 'space-between',
+            flexDirection: 'row',
+            marginVertical: responsiveHeight(0.7),
+            paddingVertical: responsiveHeight(1),
+            paddingHorizontal: responsiveWidth(2),
+            borderRadius: responsiveWidth(4),
+            backgroundColor: '#f9f9f9',
+            shadowColor: '#000',
+            shadowOffset: {width: 0, height: 0},
+            shadowOpacity: 0.1,
+            shadowRadius: 8,
+            elevation: 4,
+            width: responsiveWidth(90),
+            alignSelf: 'center',
+          }}>
+          <Text
+            style={{
+              fontSize: responsiveFontSize(1.6),
+              margin: responsiveWidth(1),
+              fontWeight: '700',
+              color,
+            }}>
+            {label} :
+          </Text>
+          <Text
+            style={{
+              fontSize: responsiveFontSize(1.6),
+              margin: responsiveWidth(1),
+              fontWeight: '700',
+              color,
+            }}>
+            {count} {count > 1 ? 'days' : 'day'}
+          </Text>
         </View>
-        <View style={styles.summaryRow}>
-          <Text style={[styles.summaryLabel, { color: '#28a745' }]}>Days Present:</Text>
-          <Text style={styles.summaryValue}>{presentCount}</Text>
-        </View>
-        <View style={styles.summaryRow}>
-          <Text style={[styles.summaryLabel, { color: '#dc3545' }]}>Days Absent:</Text>
-          <Text style={styles.summaryValue}>{absentCount}</Text>
-        </View>
-      </View>
-    </View>
+      ))}
+    </ScrollView>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    marginVertical: 20,
-    padding: 20,
-    borderRadius: 16,
-    backgroundColor: '#f9f9f9',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-    elevation: 5,
-    width: '90%',
-    alignSelf: 'center',
-  },
-  title: {
-    fontSize: 22,
-    color: '#333',
-    fontWeight: 'bold',
-    marginBottom: 15,
-    textAlign: 'center',
-  },
-  chartContainer: {
-    position: 'relative',
-    marginBottom: 20,
-  },
-  chartStyle: {
-    borderRadius: 16,
-  },
-  svgOverlay: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-  },
-  summary: {
-    width: '100%',
-    paddingHorizontal: 20,
-    backgroundColor: '#fff',
-    borderRadius: 12,
-    padding: 15,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
-  },
-  summaryTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#333',
-    marginBottom: 10,
-    textAlign: 'center',
-  },
-  summaryRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginVertical: 3,
-  },
-  summaryLabel: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#555',
-  },
-  summaryValue: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#333',
-  },
-});
+
 
 export default ReactNativeCharts;
