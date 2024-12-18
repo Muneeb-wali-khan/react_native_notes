@@ -20,7 +20,10 @@ import Notify from './src/components/nootifeeNotification/Notify';
 import CustomDropDown from './src/components/CustomDropDown';
 // import Weather from './src/components/weather/Weather';
 import ReactNativeCharts from './src/components/ReactNativeCharts';
-import ReAnimated from './src/animations/ReAnimated';
+import ReAnimated2 from './src/animations/ReAnimated2';
+import Pr1 from './src/animations/practiceAnimation/Pr1';
+import Pr2 from './src/animations/practiceAnimation/Pr2';
+// import ReAnimated1 from './src/animations/ReAnimated1';
 
 const App = () => {
   return (
@@ -86,7 +89,9 @@ const App = () => {
       {/* <Views/> */}
       {/* <Weather/> */}
       {/* <ReactNativeCharts/> */}
-      <ReAnimated/>
+      {/* <ReAnimated2/> */}
+      {/* <Pr1/> */}
+      <Pr2/>
     </>
   );
 };
