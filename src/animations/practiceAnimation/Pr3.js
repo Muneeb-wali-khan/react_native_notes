@@ -1,7 +1,7 @@
 import {View, Text, Button, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 import Animated, {
-    interpolate,
+  interpolate,
   interpolateColor,
   useAnimatedStyle,
   useSharedValue,
@@ -10,35 +10,46 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 
-const Pr2 = () => {
+const Pr3 = () => {
   const animation = useSharedValue(0);
   const [clicked, setClicked] = useState(true);
 
   const animationStyle = useAnimatedStyle(() => {
-    const radius = interpolate(animation.value, [0,1], [5, 20])
-    const background = interpolateColor(
+    const colorText = interpolateColor(
       animation.value,
       [0, 1],
-      ['green', 'red'],
+      ['red', 'red'],
     );
+    const TextSize = interpolate(animation.value, [0, 1], [16, 25]);
+    const opacityText = interpolate(animation.value, [0, 1], [0.6, 1]);
     return {
-      backgroundColor: background,
-      borderRadius:radius
+      fontSize: TextSize,
+      color: colorText,
+      opacity: opacityText,
     };
   });
 
   return (
     <View>
-      <Animated.View
+      <View
         style={[
           {
-            height: 200,
+            height: 100,
+            justifyContent: 'center',
             width: 300,
             marginTop: 50,
             alignSelf: 'center',
+            backgroundColor: 'white',
+            borderRadius: 10,
+            borderWidth: 0.5,
+            padding: 10,
           },
-          animationStyle,
-        ]}></Animated.View>
+        ]}>
+        <Animated.Text
+          style={[{textAlign: 'center', fontWeight: '900'}, animationStyle]}>
+          Muneeb wali khan
+        </Animated.Text>
+      </View>
 
       <View
         style={{
@@ -49,9 +60,9 @@ const Pr2 = () => {
         <TouchableOpacity
           onPress={() => {
             if (clicked) {
-              animation.value = withTiming(1,{duration: 500});
+              animation.value = withTiming(1, {duration: 700});
             } else {
-              animation.value = withTiming(0,{duration: 500});
+              animation.value = withTiming(0, {duration: 700});
             }
             setClicked(!clicked);
           }}
@@ -69,4 +80,4 @@ const Pr2 = () => {
   );
 };
 
-export default Pr2;
+export default Pr3;
