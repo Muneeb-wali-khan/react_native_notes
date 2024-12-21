@@ -24,6 +24,9 @@ import ReAnimated2 from './src/animations/ReAnimated2';
 import Pr1 from './src/animations/practiceAnimation/Pr1';
 import Pr2 from './src/animations/practiceAnimation/Pr2';
 import Pr3 from './src/animations/practiceAnimation/Pr3';
+import ReAnimated3 from './src/animations/ReAnimated3';
+import ReAnimated4 from './src/animations/ReAnimated4';
+import ReAnimated5 from './src/animations/ReAnimated5';
 // import ReAnimated1 from './src/animations/ReAnimated1';
 
 const App = () => {
@@ -93,7 +96,10 @@ const App = () => {
       {/* <ReAnimated2/> */}
       {/* <Pr1/> */}
       {/* <Pr2/> */}
-      <Pr3/>
+      {/* <Pr3/> */}
+      {/* <ReAnimated3/> */}
+      {/* <ReAnimated4/> */}
+      <ReAnimated5/>
     </>
   );
 };
