@@ -17,6 +17,10 @@ const ReAnimated5 = () => {
         animation.value === 1
           ? withTiming(300, {duration: 500})
           : withTiming(0, {duration: 500}),
+          paddingHorizontal:
+        animation.value === 1
+          ? withTiming(20, {duration: 500})
+          : withTiming(0, {duration: 500}),
     };
   });
 
@@ -37,7 +41,6 @@ const ReAnimated5 = () => {
             width: 300,
             height: 50,
             borderRadius: 50,
-            paddingHorizontal: 20,
           },
           animatedStyle,
         ]}>
