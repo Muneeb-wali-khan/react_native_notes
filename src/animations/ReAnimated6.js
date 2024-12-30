@@ -71,9 +71,35 @@ const ReAnimated6 = () => {
                 borderRadius: 10,
                 position: 'absolute',
                 zIndex: 10,
+                justifyContent: 'center',
+                paddingHorizontal: 20,
               },
               animatedStyle,
-            ]}></Animated.View>
+            ]}>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}>
+              <View
+                style={{flexDirection: 'row', gap: 13, alignItems: 'center'}}>
+                <Image
+                  source={require('../images/heart-3510.png')}
+                  style={[{height: 55, width: 55, tintColor: 'red'}]}
+                />
+                <View>
+                  <Text style={{fontWeight: '900', fontSize: 16}}>
+                    ABCD DEMO
+                  </Text>
+                  <Text style={{fontWeight: '300', fontSize: 15}}>
+                    Demo developer
+                  </Text>
+                </View>
+              </View>
+              <Text style={{fontWeight: '300', fontSize: 14}}>2:30 PM</Text>
+            </View>
+          </Animated.View>
           <View style={{justifyContent: 'center', height: '100%'}}>
             <View
               style={{

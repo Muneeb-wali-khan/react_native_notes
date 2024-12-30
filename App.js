@@ -28,6 +28,7 @@ import ReAnimated3 from './src/animations/ReAnimated3';
 import ReAnimated4 from './src/animations/ReAnimated4';
 import ReAnimated5 from './src/animations/ReAnimated5';
 import ReAnimated6 from './src/animations/ReAnimated6';
+import ReAnimated7 from './src/animations/ReAnimated7';
 // import ReAnimated1 from './src/animations/ReAnimated1';
 
 const App = () => {
@@ -101,7 +102,8 @@ const App = () => {
       {/* <ReAnimated3/> */}
       {/* <ReAnimated4/> */}
       {/* <ReAnimated5/> */}
-      <ReAnimated6/>
+      {/* <ReAnimated6/> */}
+      <ReAnimated7/>
     </>
   );
 };
