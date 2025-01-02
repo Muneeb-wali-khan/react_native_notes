@@ -1,0 +1,318 @@
+[{
+  "_id": {
+    "$oid": "6763efe7731f1f06b63f481e"
+  },
+  "examType": "First Term",
+  "resultClass": "CLASS 1 (BOYS)",
+  "resultDate": {
+    "$date": "2024-12-19T00:00:00.000Z"
+  },
+  "status": "PENDING",
+  "totalMarksExam": 510,
+  "addedBy": "Muneeb Wali khan",
+  "studentsResults": [
+    {
+      "studentFullName": "Jaleel khan",
+      "studentFatherName": "Jameel shah",
+      "rollNo": 1,
+      "subjectsMarks": [
+        {
+          "subjectName": "English",
+          "totalMarksSubject": 60,
+          "obtainedMarksSubject": 40,
+          "percentageSubject": 0,
+          "gradeSubject": "---",
+          "_id": {
+            "$oid": "6773d7b1f9dc231b502965f8"
+          }
+        },
+        {
+          "subjectName": "Islamyat",
+          "totalMarksSubject": 60,
+          "obtainedMarksSubject": 40,
+          "percentageSubject": 0,
+          "gradeSubject": "---",
+          "_id": {
+            "$oid": "6773d7b1f9dc231b502965f9"
+          }
+        },
+        {
+          "subjectName": "Maths",
+          "totalMarksSubject": 100,
+          "obtainedMarksSubject": 90,
+          "percentageSubject": 0,
+          "gradeSubject": "---",
+          "_id": {
+            "$oid": "6773d7b1f9dc231b502965fa"
+          }
+        },
+        {
+          "subjectName": "Science",
+          "totalMarksSubject": 50,
+          "obtainedMarksSubject": 40,
+          "percentageSubject": 0,
+          "gradeSubject": "---",
+          "_id": {
+            "$oid": "6773d7b1f9dc231b502965fb"
+          }
+        },
+        {
+          "subjectName": "Urdu",
+          "totalMarksSubject": 70,
+          "obtainedMarksSubject": 50,
+          "percentageSubject": 0,
+          "gradeSubject": "---",
+          "_id": {
+            "$oid": "6773d7b1f9dc231b502965fc"
+          }
+        }
+      ],
+      "totalMarksStudent": 510,
+      "obtainedMarksStudent": 260,
+      "percentageStudent": 51,
+      "gradeStudent": "D",
+      "positionClass": 0,
+      "comment": "Failed",
+      "_id": {
+        "$oid": "6763efe7731f1f06b63f481f"
+      }
+    },
+    {
+      "studentFullName": "Ffff",
+      "studentFatherName": "Gggg",
+      "rollNo": 2,
+      "subjectsMarks": [
+        {
+          "subjectName": "English",
+          "totalMarksSubject": 0,
+          "obtainedMarksSubject": 0,
+          "percentageSubject": 0,
+          "gradeSubject": "---",
+          "_id": {
+            "$oid": "6763efe7731f1f06b63f4826"
+          }
+        },
+        {
+          "subjectName": "Islamyat",
+          "totalMarksSubject": 0,
+          "obtainedMarksSubject": 0,
+          "percentageSubject": 0,
+          "gradeSubject": "---",
+          "_id": {
+            "$oid": "6763efe7731f1f06b63f4827"
+          }
+        },
+        {
+          "subjectName": "Maths",
+          "totalMarksSubject": 0,
+          "obtainedMarksSubject": 0,
+          "percentageSubject": 0,
+          "gradeSubject": "---",
+          "_id": {
+            "$oid": "6763efe7731f1f06b63f4828"
+          }
+        },
+        {
+          "subjectName": "Science",
+          "totalMarksSubject": 0,
+          "obtainedMarksSubject": 0,
+          "percentageSubject": 0,
+          "gradeSubject": "---",
+          "_id": {
+            "$oid": "6763efe7731f1f06b63f4829"
+          }
+        },
+        {
+          "subjectName": "Urdu",
+          "totalMarksSubject": 0,
+          "obtainedMarksSubject": 0,
+          "percentageSubject": 0,
+          "gradeSubject": "---",
+          "_id": {
+            "$oid": "6763efe7731f1f06b63f482a"
+          }
+        }
+      ],
+      "totalMarksStudent": 0,
+      "obtainedMarksStudent": 0,
+      "percentageStudent": 0,
+      "gradeStudent": "---",
+      "positionClass": 0,
+      "comment": "---",
+      "_id": {
+        "$oid": "6763efe7731f1f06b63f4825"
+      }
+    },
+    {
+      "studentFullName": "Khaleel khan",
+      "studentFatherName": "Sameer Khan",
+      "rollNo": 3,
+      "subjectsMarks": [
+        {
+          "subjectName": "English",
+          "totalMarksSubject": 0,
+          "obtainedMarksSubject": 0,
+          "percentageSubject": 0,
+          "gradeSubject": "---",
+          "_id": {
+            "$oid": "6763efe7731f1f06b63f482c"
+          }
+        },
+        {
+          "subjectName": "Islamyat",
+          "totalMarksSubject": 0,
+          "obtainedMarksSubject": 0,
+          "percentageSubject": 0,
+          "gradeSubject": "---",
+          "_id": {
+            "$oid": "6763efe7731f1f06b63f482d"
+          }
+        },
+        {
+          "subjectName": "Maths",
+          "totalMarksSubject": 0,
+          "obtainedMarksSubject": 0,
+          "percentageSubject": 0,
+          "gradeSubject": "---",
+          "_id": {
+            "$oid": "6763efe7731f1f06b63f482e"
+          }
+        },
+        {
+          "subjectName": "Science",
+          "totalMarksSubject": 0,
+          "obtainedMarksSubject": 0,
+          "percentageSubject": 0,
+          "gradeSubject": "---",
+          "_id": {
+            "$oid": "6763efe7731f1f06b63f482f"
+          }
+        },
+        {
+          "subjectName": "Urdu",
+          "totalMarksSubject": 0,
+          "obtainedMarksSubject": 0,
+          "percentageSubject": 0,
+          "gradeSubject": "---",
+          "_id": {
+            "$oid": "6763efe7731f1f06b63f4830"
+          }
+        }
+      ],
+      "totalMarksStudent": 0,
+      "obtainedMarksStudent": 0,
+      "percentageStudent": 0,
+      "gradeStudent": "---",
+      "positionClass": 0,
+      "comment": "---",
+      "_id": {
+        "$oid": "6763efe7731f1f06b63f482b"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-12-19T10:05:27.403Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-31T11:38:25.055Z"
+  },
+  "__v": 2
+},
+{
+  "_id": {
+    "$oid": "6763f028731f1f06b63f484a"
+  },
+  "examType": "First Term",
+  "resultClass": "CLASS 2 (BOYS)",
+  "resultDate": {
+    "$date": "2024-12-19T00:00:00.000Z"
+  },
+  "status": "PENDING",
+  "totalMarksExam": 500,
+  "addedBy": "Muneeb Wali khan",
+  "studentsResults": [
+    {
+      "studentFullName": "Wajid shah",
+      "studentFatherName": "Raheem khan",
+      "rollNo": 1,
+      "subjectsMarks": [
+        {
+          "subjectName": "English",
+          "totalMarksSubject": 0,
+          "obtainedMarksSubject": 0,
+          "percentageSubject": 0,
+          "gradeSubject": "---",
+          "_id": {
+            "$oid": "6763f028731f1f06b63f484c"
+          }
+        },
+        {
+          "subjectName": "History",
+          "totalMarksSubject": 0,
+          "obtainedMarksSubject": 0,
+          "percentageSubject": 0,
+          "gradeSubject": "---",
+          "_id": {
+            "$oid": "6763f028731f1f06b63f484d"
+          }
+        },
+        {
+          "subjectName": "Islamyat",
+          "totalMarksSubject": 0,
+          "obtainedMarksSubject": 0,
+          "percentageSubject": 0,
+          "gradeSubject": "---",
+          "_id": {
+            "$oid": "6763f028731f1f06b63f484e"
+          }
+        },
+        {
+          "subjectName": "Maths",
+          "totalMarksSubject": 0,
+          "obtainedMarksSubject": 0,
+          "percentageSubject": 0,
+          "gradeSubject": "---",
+          "_id": {
+            "$oid": "6763f028731f1f06b63f484f"
+          }
+        },
+        {
+          "subjectName": "Science",
+          "totalMarksSubject": 0,
+          "obtainedMarksSubject": 0,
+          "percentageSubject": 0,
+          "gradeSubject": "---",
+          "_id": {
+            "$oid": "6763f028731f1f06b63f4850"
+          }
+        },
+        {
+          "subjectName": "Urdu",
+          "totalMarksSubject": 0,
+          "obtainedMarksSubject": 0,
+          "percentageSubject": 0,
+          "gradeSubject": "---",
+          "_id": {
+            "$oid": "6763f028731f1f06b63f4851"
+          }
+        }
+      ],
+      "totalMarksStudent": 0,
+      "obtainedMarksStudent": 0,
+      "percentageStudent": 0,
+      "gradeStudent": "---",
+      "positionClass": 0,
+      "comment": "---",
+      "_id": {
+        "$oid": "6763f028731f1f06b63f484b"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-12-19T10:06:32.319Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-25T12:30:30.949Z"
+  },
+  "__v": 0
+}]
