@@ -6,9 +6,36 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
+import Animated, {
+  useAnimatedStyle,
+  withTiming,
+  useSharedValue,
+  withSpring,
+} from 'react-native-reanimated';
 
 const ReAnimated11 = () => {
+  const topVl = useSharedValue(0);
+  const leftVl = useSharedValue(0);
+  const opicityVl = useSharedValue(1);
+  const scaleVl = useSharedValue(1);
+  const [count, setCount] = useState(0);
+
+  const animatedIconStyle = useAnimatedStyle(() => {
+    return {
+      zIndex: 0,
+      top: topVl.value,
+      left: leftVl.value,
+      opacity: opicityVl.value,
+    };
+  });
+
+  const animatedIconStyle2 = useAnimatedStyle(() => {
+    return {
+      transform: [{scale: scaleVl.value}],
+    };
+  });
+
   return (
     <>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -30,21 +57,24 @@ const ReAnimated11 = () => {
                 source={require('../images/red-shopping-cart-10906.png')}
               />
             </View>
-            <View
-              style={{
-                width: 36,
-                position: 'absolute',
-                height: 36,
-                justifyContent: 'center',
-                alignItems: 'center',
-                backgroundColor: 'red',
-                borderRadius: 50,
-                left: -10,
-              }}>
+            <Animated.View
+              style={[
+                {
+                  width: 36,
+                  position: 'absolute',
+                  height: 36,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  backgroundColor: 'red',
+                  borderRadius: 50,
+                  left: -10,
+                },
+                animatedIconStyle2,
+              ]}>
               <Text style={{fontSize: 13, fontWeight: '800', color: 'white'}}>
-                12
+                {count}
               </Text>
-            </View>
+            </Animated.View>
           </View>
         </ImageBackground>
         <View style={{paddingHorizontal: 15, marginTop: 10}}>
@@ -81,30 +111,57 @@ const ReAnimated11 = () => {
       <View
         style={{justifyContent: 'center', alignItems: 'center', padding: 15}}>
         <TouchableOpacity
+          onPress={() => {
+            opicityVl.value = withTiming(1);
+            topVl.value = withTiming(-620, {duration: 1500});
+            leftVl.value = withTiming(-130, {duration: 1500});
+
+            setTimeout(() => {
+              scaleVl.value = withTiming(1.4, {duration: 500});
+              setCount(count + 1);
+              setTimeout(() => {
+                scaleVl.value = withTiming(1);
+              }, 300);
+              opicityVl.value = 0;
+              topVl.value = withTiming(0);
+              leftVl.value = withTiming(0);
+            }, 1500);
+          }}
+          activeOpacity={0.7}
           style={{
             paddingVertical: 18,
             borderRadius: 10,
             paddingHorizontal: 20,
             width: '100%',
-            zIndex:100,
+            zIndex: 1,
             backgroundColor: 'brown',
           }}>
           <Text style={{color: 'white', textAlign: 'center'}}>Add to Cart</Text>
         </TouchableOpacity>
+
         <View
           style={{
-            width: 36,
             position: 'absolute',
-            height: 36,
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundColor: 'red',
-            borderRadius: 50,
-            zIndex:0
           }}>
-          <Text style={{fontSize: 13, fontWeight: '800', color: 'white'}}>
-            12
-          </Text>
+          <Animated.View
+            style={[
+              {
+                borderRadius: 50,
+                backgroundColor: 'red',
+                paddingVertical: 9,
+                paddingHorizontal: 10,
+              },
+              animatedIconStyle,
+            ]}>
+            <Text
+              style={{
+                fontSize: 13,
+                fontWeight: '800',
+                color: 'white',
+              }}>
+              1
+            </Text>
+          </Animated.View>
         </View>
       </View>
     </>
