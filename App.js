@@ -33,6 +33,7 @@ import ReAnimated8 from './src/animations/ReAnimated8';
 import ReAnimated9 from './src/animations/ReAnimated9';
 import ReAnimated10 from './src/animations/ReAnimated10';
 import ReAnimated11 from './src/animations/ReAnimated11';
+import VissionModel from './src/components/modelsPr/VissionModel';
 // import ReAnimated1 from './src/animations/ReAnimated1';
 
 const App = () => {
@@ -109,7 +110,8 @@ const App = () => {
       {/* <ReAnimated6/> */}
       {/* <ReAnimated7/> */}
       {/* <ReAnimated8/> */}
-      <ReAnimated11/>
+      {/* <ReAnimated11/> */}
+      <VissionModel/>
     </>
   );
 };
